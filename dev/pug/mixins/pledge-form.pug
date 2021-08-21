@@ -3,7 +3,7 @@ mixin pledge-form(pledge)
   if(pledge.unitLeft == "0")
     - let attDisabled = "disabled"
   .pledge
-    input.pledge__radio(id=`radio-${pledge.radioName}` type="radio" name="pledge-radio" aria-expanded="false" aria-owns=`expandable-controls-${pledge.radioName}`)
+    input.pledge__radio(id=`radio-${pledge.radioName}` type="radio" name="pledge-radio")
     label.pledge__label(for=`radio-${pledge.radioName}`)= pledge.type
       if (pledge.pledgeAmount != "0")
         span.pledge__label--light= `Pledge $${pledge.pledgeAmount} or more`
