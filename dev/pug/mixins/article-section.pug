@@ -1,0 +1,17 @@
+mixin article-section(option)
+  if(option.left =="0")
+    - var extraClass = "model--disabled"
+  else
+    - var extraClass =""
+  section.model(class=`${extraClass}`)
+    .model__header(class=`${extraClass}`)
+      h3.model__title(class=`${extraClass}`)= option.title
+      p.model__price(class=`${extraClass}`)= `Pledge $${option.price} or more`
+    p.model__descriptioin(class=`${extraClass}`)= option.description
+    .model__footer(class=`${extraClass}`)
+      p.model__left(class=`${extraClass}`)= option.left
+        span  left
+      if(option.left == "0")
+        button.model__get.model__get--disabled(type="button" disabled) Out of stock
+      else
+        button.model__get(type="button") Select Reward

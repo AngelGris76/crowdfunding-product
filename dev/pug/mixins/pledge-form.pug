@@ -1,0 +1,18 @@
+mixin pledge-form(pledge)
+  - let attDisabled = ""
+  if(pledge.unitLeft == "0")
+    - let attDisabled = "disabled"
+  .pledge
+    input.pledge__radio(id=`radio-${pledge.radioName}` type="radio" name="pledge-radio" aria-expanded="false" aria-owns=`expandable-controls-${pledge.radioName}`)
+    label.pledge__label(for=`radio-${pledge.radioName}`)= pledge.type
+      if (pledge.pledgeAmount != "0")
+        span.pledge__label--light= `Pledge $${pledge.pledgeAmount} or more`
+    p.pledge__description= pledge.description
+    if (pledge.pledgeAmount != "0")
+      p.pledge__left= pledge.unitLeft
+        span.pledge__left--small  left
+    .pledge__expandable(id=`expandable-controls-${pledge.radioName}`)
+      p.pledge__option-paragraph Enter your Pledge
+      .pledge__expandable-controls
+        input.pledge__expandable-input(type="number", name="pledge-money" aria-label="pledge money")
+        button.pledge__expandable-button Continue
