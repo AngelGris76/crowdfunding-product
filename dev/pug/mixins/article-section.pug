@@ -7,11 +7,11 @@ mixin article-section(option)
     .model__header(class=`${extraClass}`)
       h3.model__title(class=`${extraClass}`)= option.title
       p.model__price(class=`${extraClass}`)= `Pledge $${option.price} or more`
-    p.model__descriptioin(class=`${extraClass}`)= option.description
+    p.model__description(class=`${extraClass}`)= option.description
     .model__footer(class=`${extraClass}`)
       p.model__left(class=`${extraClass}`)= option.left
-        span  left
+        span.model__left-text left
       if(option.left == "0")
-        button.model__get.model__get--disabled(type="button" disabled) Out of stock
+        button.model__get.button--primary.model__get--disabled(type="button" disabled) Out of stock
       else
-        button.model__get(type="button") Select Reward
+        button.model__get.button--primary(type="button") Select Reward
