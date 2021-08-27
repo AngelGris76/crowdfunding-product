@@ -1,0 +1,22 @@
+@use 'base';
+@use 'blocks/header';
+@use 'blocks/menu';
+@use 'blocks/content';
+@use 'blocks/modal-pledge';
+
+.modal-overlay {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background-color: var(--Modal-overlay);
+  top: 0;
+  left: 0;
+}
+.modal--hide {
+  display: none;
+}
+
+.body-overflow--hide {
+  overflow: hidden;
+}

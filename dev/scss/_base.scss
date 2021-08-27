@@ -1,0 +1,34 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --Moderate-cyan: hsl(176, 50%, 47%);
+  --Dark-cyan: hsl(176, 72%, 28%);
+
+  --Black: hsl(0, 0%, 0%);
+  --Dark-gray: hsl(0, 0%, 48%);
+  --Moderate-gray: hsl(0, 0%, 85%);
+  --Light-gray: hsl(0, 0%, 95%);
+
+  --Bar-percentaje: 89.9%;
+  --Modal-overlay: hsl(0, 0%, 0%, 0.55);
+}
+
+body {
+  font-family: "Commissioner", sans-serif;
+  background-color: var(--Light-gray);
+}
+
+.button-togle,
+.heading__button,
+.model__get,
+.modal-pledge__closebutton,
+.modal-success__button,
+.pledge__expandable-button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
