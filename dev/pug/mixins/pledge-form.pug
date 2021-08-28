@@ -1,20 +1,22 @@
 mixin pledge-form(pledge)
-  - let attDisabled = ""
-  if(pledge.unitLeft == "0")
-    - let attDisabled = "disabled"
-  .pledge
+  - var attDisabled = {}
+  - var extraClass ="" 
+  if (pledge.unitLeft == "0")
+    - attDisabled = {disabled:"disabled"}
+    - extraClass = "pledge--disabled"
+  div(class=`pledge ${extraClass}`)
     .pledge__fixed
       .pledge__controls
-        input.pledge__radio(id=`radio-${pledge.radioName}` type="radio" name="pledge-radio")
-        label.pledge__label(for=`radio-${pledge.radioName}`)= pledge.type
+        input.pledge__radio(id=`radio-${pledge.radioName}` type="radio" name="pledge-radio")&attributes(attDisabled)
+        label.pledge__label(for= `radio-${pledge.radioName}`)= pledge.type
           if (pledge.pledgeAmount != "15")
             span.pledge__label--light= `Pledge $${pledge.pledgeAmount} or more`
       p.pledge__description= pledge.description
       if (pledge.pledgeAmount != "15")
         p.pledge__left= pledge.unitLeft
           span.pledge__left--small  left
-    .pledge__expandable(id=`expandable-controls-${pledge.radioName}`)
+    .pledge__expandable.pledge__expandable--hide(id=`expandable-controls-${pledge.radioName}`)
       p.pledge__option-paragraph Enter your Pledge
       .pledge__expandable-controls
-        input.pledge__expandable-input(type="number", name="pledge-money" aria-label=`pledge price ${pledge.pledgeAmount} or more` min=`${pledge.pledgeAmount}` value=`${pledge.pledgeAmount}`)
-        button.pledge__expandable-button.button--primary Continue
+        input.pledge__expandable-input(type="number", name="pledge-money" aria-label=`pledge price ${pledge.pledgeAmount} or more` min=`${pledge.pledgeAmount}` value=`${pledge.pledgeAmount}` disabled)
+        button.pledge__expandable-button.button--primary(disabled) Continue

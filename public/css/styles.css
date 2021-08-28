@@ -462,6 +462,24 @@ body {
 .modal-pledge__description {
   margin-bottom: 1.9em;
 }
+@media screen and (min-width: 768px) {
+  .modal-pledge {
+    top: 12.9em;
+    max-width: 724px;
+    padding-left: 2.5em;
+    padding-right: 2.5em;
+  }
+  .modal-pledge__header {
+    margin-bottom: 1.3em;
+  }
+  .modal-pledge__title {
+    font-size: 1.55rem;
+    margin-top: 0.8em;
+  }
+  .modal-pledge__description {
+    margin-bottom: 2.6em;
+  }
+}
 
 .modal-pledge__description,
 .pledge__description {
@@ -475,11 +493,17 @@ body {
   color: var(--Dark-gray);
   margin-bottom: 1.7em;
 }
+@media screen and (min-width: 768px) {
+  .pledge {
+    padding: 1.9em 0 0;
+  }
+}
 .pledge__fixed, .pledge__expandable {
   padding-left: 1.5em;
   padding-right: 1.5em;
 }
 .pledge__fixed {
+  position: relative;
   margin-bottom: 1.8em;
 }
 .pledge__controls {
@@ -487,6 +511,11 @@ body {
   align-items: center;
   margin-bottom: 1.5em;
   gap: 1em;
+}
+@media screen and (min-width: 768px) {
+  .pledge__controls {
+    margin-bottom: 1em;
+  }
 }
 .pledge__radio {
   -webkit-appearance: none;
@@ -517,8 +546,26 @@ body {
   color: var(--Moderate-cyan);
   margin-top: 1em;
 }
+@media screen and (min-width: 768px) {
+  .pledge__label--light {
+    display: initial;
+    margin-left: 1em;
+  }
+}
+@media screen and (min-width: 768px) {
+  .pledge__label {
+    font-size: 1rem;
+  }
+}
 .pledge__description {
   margin-bottom: 1.6em;
+}
+@media screen and (min-width: 768px) {
+  .pledge__description {
+    padding-left: 3em;
+    margin-top: 0;
+    line-height: 2.1;
+  }
 }
 .pledge__left {
   color: black;
@@ -531,6 +578,14 @@ body {
   font-size: 1rem;
   font-weight: 400;
 }
+@media screen and (min-width: 768px) {
+  .pledge__left {
+    position: absolute;
+    top: 0;
+    right: 1.5em;
+    margin: 0;
+  }
+}
 .pledge__expandable, .pledge__expandable-controls {
   display: flex;
   align-items: center;
@@ -542,11 +597,6 @@ body {
   flex-direction: column;
   justify-content: flex-end;
   gap: 0.5em;
-}
-.pledge__expandable--hide {
-  border-top-color: transparent;
-  height: 0;
-  overflow: hidden;
 }
 .pledge__expandable-controls {
   justify-content: center;
@@ -570,6 +620,18 @@ body {
   outline: none;
   padding-left: 3em;
   font-weight: 700;
+}
+@media screen and (min-width: 768px) {
+  .pledge__expandable {
+    flex-direction: row;
+    justify-content: space-between;
+    height: 96px;
+  }
+}
+.pledge__expandable--hide {
+  border-top-color: transparent;
+  height: 0;
+  overflow: hidden;
 }
 .pledge--selected {
   border-width: 2px;
@@ -604,6 +666,26 @@ body {
   border-radius: 1.6em;
   max-width: 110px;
 }
+@media screen and (min-width: 768px) {
+  .modal-success {
+    max-width: 540px;
+    padding-top: 3.1em;
+    padding-bottom: 3.1em;
+  }
+  .modal-success__image {
+    width: 88px;
+    margin-bottom: 3.1em;
+  }
+  .modal-success__title {
+    font-size: 1.55rem;
+    margin-bottom: 0.6em;
+  }
+  .modal-success__paragraph {
+    line-height: 2.1;
+    margin-top: 0;
+    margin-bottom: 2em;
+  }
+}
 
 .modal-overlay {
   position: fixed;
@@ -621,9 +703,4 @@ body {
 
 .body-overflow--hide {
   overflow: hidden;
-}
-@media screen and (min-width: 768px) {
-  .body-overflow--hide {
-    padding-right: 15px;
-  }
 }
