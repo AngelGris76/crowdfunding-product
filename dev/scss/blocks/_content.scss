@@ -4,6 +4,10 @@
   margin-left: auto;
   margin-right: auto;
   top: -55px;
+  max-width: 724px;
+  @media screen and (min-width: 768px) {
+    top: -92px;
+  }
 }
 
 .heading,
@@ -13,6 +17,9 @@
   border-radius: 8px;
   margin-bottom: 1.8em;
   padding: 2.3em 1.5em;
+  @media screen and (min-width: 768px) {
+    padding: 2.9em 2.5em;
+  }
 }
 
 .heading__button,
@@ -30,6 +37,16 @@
   border-radius: 1.7em;
 }
 
+.button--bookmark {
+  border-radius: 28px;
+  background-color: var(--Light-gray);
+  @media screen and (max-width: 767px) {
+    overflow: hidden;
+    width: 56px;
+    height: 56px;
+  }
+}
+
 .heading {
   text-align: center;
   &__img {
@@ -42,12 +59,22 @@
     font-size: 1.27rem;
     margin-bottom: 1em;
     padding: 0 0.2em;
+    @media screen and (min-width: 768px) {
+      font-size: 1.75rem;
+      margin-top: 0.3em;
+      margin-bottom: 0.5em;
+    }
   }
   &__subtitle {
     font-size: 0.8rem;
     color: var(--Dark-gray);
     line-height: 1.8;
     margin-bottom: 1.8em;
+    @media screen and (min-width: 768px) {
+      font-size: 1rem;
+      margin-top: 0;
+      margin-bottom: 2.2em;
+    }
   }
   &__controls {
     display: flex;
@@ -58,6 +85,10 @@
   &__icon-bookmark {
     vertical-align: middle;
   }
+  &__button-text {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
 }
 
 .stats {
@@ -67,27 +98,54 @@
     justify-content: space-between;
     text-align: center;
     height: 290px;
+    @media screen and (min-width: 768px) {
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 7em;
+      height: auto;
+    }
   }
   &__number {
     position: relative;
     font-size: 2rem;
     font-weight: 700;
     margin: 0;
+    @media screen and (min-width: 768px) {
+      &--bars {
+        padding-right: 1.4em;
+      }
+    }
 
     &--bars::before,
     &--bars::after {
       content: "";
       position: absolute;
-      width: 25%;
-      border-top: 1px solid var(--Dark-gray);
-      left: 50%;
-      transform: translateX(-50%);
+      @media screen and (max-width: 767px) {
+        width: 25%;
+        border-top: 1px solid var(--Dark-gray);
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      @media screen and (min-width: 768px) {
+        width: 0;
+        height: 100%;
+        border-left: 1px solid var(--Dark-gray);
+      }
     }
     &--bars::before {
       top: -25px;
+      @media screen and (min-width: 768px) {
+        top: 0;
+        left: -1.7em;
+      }
     }
     &--bars::after {
       bottom: -25px;
+      @media screen and (min-width: 768px) {
+        top: 0;
+        right: -1.7em;
+      }
     }
   }
 
@@ -104,6 +162,9 @@
     border-radius: 6px;
     background-color: var(--Light-gray);
     margin-top: 2em;
+    @media screen and (min-width: 768px) {
+      margin-top: 2.35em;
+    }
     margin-left: auto;
     margin-right: auto;
 
@@ -136,6 +197,20 @@
     margin-top: 0;
     margin-bottom: 1.2em;
   }
+  @media screen and (min-width: 768px) {
+    &__title {
+      font-size: 1.3rem;
+      margin-bottom: 1.7em;
+    }
+    &__description {
+      font-size: 1.06rem;
+      line-height: 1.8;
+      margin-bottom: 1.7em;
+    }
+    &__description:last-of-type {
+      margin-bottom: 0.7em;
+    }
+  }
 }
 
 .model {
@@ -143,6 +218,12 @@
   border-radius: 8px;
   padding: 1.5em;
   margin-bottom: 1.5em;
+  @media screen and (min-width: 768px) {
+    padding-top: 1.8em;
+    padding-bottom: 1.8em;
+    margin-bottom: 1.6em;
+  }
+
   &__title,
   &__price {
     font-size: 0.85rem;
@@ -150,11 +231,33 @@
   &__title {
     margin: 0;
   }
+
   &__price {
     color: var(--Moderate-cyan);
     font-weight: 700;
     margin-bottom: 1.8em;
   }
+
+  @media screen and (min-width: 768px) {
+    &__header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 0.4em;
+      margin-bottom: 1.6em;
+    }
+    &__title {
+      font-size: 1.15rem;
+    }
+    &__price {
+      margin: 0;
+    }
+    &__description {
+      font-size: 1rem;
+      line-height: 1.9;
+    }
+  }
+
   &__footer,
   &__left {
     display: flex;
@@ -165,6 +268,11 @@
     justify-content: center;
     align-items: flex-start;
     gap: 2rem;
+    @media screen and (min-width: 768px) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
   }
 
   &__left {

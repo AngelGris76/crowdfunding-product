@@ -39,6 +39,14 @@ body {
   height: 80vw;
   padding-top: 2.1em;
 }
+@media screen and (min-width: 1024px) {
+  .header {
+    background-image: url("../assets/images/image-hero-desktop.jpg");
+    height: 28vw;
+    background-size: contain;
+    padding-top: 2.2em;
+  }
+}
 
 .main-nav {
   padding: 0 1.5em;
@@ -50,38 +58,59 @@ body {
 .main-nav--show {
   z-index: 3;
 }
-
 @media screen and (min-width: 1024px) {
+  .main-nav {
+    padding: 0 10em;
+  }
+}
+
+@media screen and (min-width: 768px) {
   .button-togle {
     display: none;
   }
 }
 
 .menu {
-  background-color: white;
-  color: black;
-  border-radius: 8px;
-  width: 88%;
-  position: absolute;
   list-style: none;
   padding-left: 0;
-  top: 37px;
-  left: 50%;
-  transform: translateX(-50%);
   font-size: 1.2rem;
   font-weight: 500;
 }
-.menu__item:not(:last-child) {
-  border-bottom: 1px solid var(--Light-gray);
-}
 .menu__link {
   display: inline-block;
-  color: inherit;
+  color: black;
   text-decoration: none;
   padding: 1.22em 0 1.22em 1.5em;
 }
-.menu--hide {
-  display: none;
+@media screen and (max-width: 767px) {
+  .menu {
+    background-color: white;
+    border-radius: 8px;
+    width: 88%;
+    position: absolute;
+    top: 37px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .menu__item:not(:last-child) {
+    border-bottom: 1px solid var(--Light-gray);
+  }
+  .menu--hide {
+    display: none;
+  }
+}
+@media screen and (min-width: 768px) {
+  .menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+    font-size: 0.9rem;
+  }
+  .menu__link {
+    color: white;
+    padding: 0;
+  }
 }
 
 .main-content {
@@ -90,6 +119,12 @@ body {
   margin-left: auto;
   margin-right: auto;
   top: -55px;
+  max-width: 724px;
+}
+@media screen and (min-width: 768px) {
+  .main-content {
+    top: -92px;
+  }
 }
 
 .heading,
@@ -99,6 +134,13 @@ body {
   border-radius: 8px;
   margin-bottom: 1.8em;
   padding: 2.3em 1.5em;
+}
+@media screen and (min-width: 768px) {
+  .heading,
+.stats,
+.article {
+    padding: 2.9em 2.5em;
+  }
 }
 
 .heading__button,
@@ -116,6 +158,18 @@ body {
   border-radius: 1.7em;
 }
 
+.button--bookmark {
+  border-radius: 28px;
+  background-color: var(--Light-gray);
+}
+@media screen and (max-width: 767px) {
+  .button--bookmark {
+    overflow: hidden;
+    width: 56px;
+    height: 56px;
+  }
+}
+
 .heading {
   text-align: center;
 }
@@ -130,11 +184,25 @@ body {
   margin-bottom: 1em;
   padding: 0 0.2em;
 }
+@media screen and (min-width: 768px) {
+  .heading__title {
+    font-size: 1.75rem;
+    margin-top: 0.3em;
+    margin-bottom: 0.5em;
+  }
+}
 .heading__subtitle {
   font-size: 0.8rem;
   color: var(--Dark-gray);
   line-height: 1.8;
   margin-bottom: 1.8em;
+}
+@media screen and (min-width: 768px) {
+  .heading__subtitle {
+    font-size: 1rem;
+    margin-top: 0;
+    margin-bottom: 2.2em;
+  }
 }
 .heading__controls {
   display: flex;
@@ -145,6 +213,10 @@ body {
 .heading__icon-bookmark {
   vertical-align: middle;
 }
+.heading__button-text {
+  padding-left: 1em;
+  padding-right: 1em;
+}
 
 .stats__data {
   display: flex;
@@ -153,25 +225,62 @@ body {
   text-align: center;
   height: 290px;
 }
+@media screen and (min-width: 768px) {
+  .stats__data {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 7em;
+    height: auto;
+  }
+}
 .stats__number {
   position: relative;
   font-size: 2rem;
   font-weight: 700;
   margin: 0;
 }
+@media screen and (min-width: 768px) {
+  .stats__number--bars {
+    padding-right: 1.4em;
+  }
+}
 .stats__number--bars::before, .stats__number--bars::after {
   content: "";
   position: absolute;
-  width: 25%;
-  border-top: 1px solid var(--Dark-gray);
-  left: 50%;
-  transform: translateX(-50%);
+}
+@media screen and (max-width: 767px) {
+  .stats__number--bars::before, .stats__number--bars::after {
+    width: 25%;
+    border-top: 1px solid var(--Dark-gray);
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+@media screen and (min-width: 768px) {
+  .stats__number--bars::before, .stats__number--bars::after {
+    width: 0;
+    height: 100%;
+    border-left: 1px solid var(--Dark-gray);
+  }
 }
 .stats__number--bars::before {
   top: -25px;
 }
+@media screen and (min-width: 768px) {
+  .stats__number--bars::before {
+    top: 0;
+    left: -1.7em;
+  }
+}
 .stats__number--bars::after {
   bottom: -25px;
+}
+@media screen and (min-width: 768px) {
+  .stats__number--bars::after {
+    top: 0;
+    right: -1.7em;
+  }
 }
 .stats__description {
   display: block;
@@ -188,6 +297,11 @@ body {
   margin-top: 2em;
   margin-left: auto;
   margin-right: auto;
+}
+@media screen and (min-width: 768px) {
+  .stats__bar {
+    margin-top: 2.35em;
+  }
 }
 .stats__bar::after {
   content: "";
@@ -217,12 +331,33 @@ body {
   margin-top: 0;
   margin-bottom: 1.2em;
 }
+@media screen and (min-width: 768px) {
+  .article__title {
+    font-size: 1.3rem;
+    margin-bottom: 1.7em;
+  }
+  .article__description {
+    font-size: 1.06rem;
+    line-height: 1.8;
+    margin-bottom: 1.7em;
+  }
+  .article__description:last-of-type {
+    margin-bottom: 0.7em;
+  }
+}
 
 .model {
   border: 1px solid var(--Moderate-gray);
   border-radius: 8px;
   padding: 1.5em;
   margin-bottom: 1.5em;
+}
+@media screen and (min-width: 768px) {
+  .model {
+    padding-top: 1.8em;
+    padding-bottom: 1.8em;
+    margin-bottom: 1.6em;
+  }
 }
 .model__title, .model__price {
   font-size: 0.85rem;
@@ -235,6 +370,25 @@ body {
   font-weight: 700;
   margin-bottom: 1.8em;
 }
+@media screen and (min-width: 768px) {
+  .model__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 0.4em;
+    margin-bottom: 1.6em;
+  }
+  .model__title {
+    font-size: 1.15rem;
+  }
+  .model__price {
+    margin: 0;
+  }
+  .model__description {
+    font-size: 1rem;
+    line-height: 1.9;
+  }
+}
 .model__footer, .model__left {
   display: flex;
 }
@@ -243,6 +397,13 @@ body {
   justify-content: center;
   align-items: flex-start;
   gap: 2rem;
+}
+@media screen and (min-width: 768px) {
+  .model__footer {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 .model__left {
   align-items: center;
@@ -460,4 +621,9 @@ body {
 
 .body-overflow--hide {
   overflow: hidden;
+}
+@media screen and (min-width: 768px) {
+  .body-overflow--hide {
+    padding-right: 15px;
+  }
 }

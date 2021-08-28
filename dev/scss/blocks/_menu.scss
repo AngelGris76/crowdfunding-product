@@ -1,27 +1,40 @@
 .menu {
-  background-color: white;
-  color: black;
-  border-radius: 8px;
-  width: 88%;
-  position: absolute;
   list-style: none;
   padding-left: 0;
-  top: 37px;
-  left: 50%;
-  transform: translateX(-50%);
   font-size: 1.2rem;
   font-weight: 500;
-  &__item:not(:last-child) {
-    border-bottom: 1px solid var(--Light-gray);
-  }
   &__link {
     display: inline-block;
-    color: inherit;
+    color: black;
     text-decoration: none;
     padding: 1.22em 0 1.22em 1.5em;
   }
 
-  &--hide {
-    display: none;
+  @media screen and (max-width: 767px) {
+    background-color: white;
+    border-radius: 8px;
+    width: 88%;
+    position: absolute;
+    top: 37px;
+    left: 50%;
+    transform: translateX(-50%);
+    &__item:not(:last-child) {
+      border-bottom: 1px solid var(--Light-gray);
+    }
+    &--hide {
+      display: none;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+    font-size: 0.9rem;
+    &__link {
+      color: white;
+      padding: 0;
+    }
   }
 }
