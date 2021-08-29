@@ -22,7 +22,7 @@ body {
   background-color: var(--Light-gray);
 }
 
-.button-togle,
+.button-menu,
 .heading__button,
 .model__get,
 .modal-pledge__closebutton,
@@ -31,4 +31,14 @@ body {
   border: none;
   outline: none;
   background-color: transparent;
+}
+
+.button--primary,
+.button--bookmark,
+.modal-pledge__closebutton {
+  @media screen and (min-width: 1024px) {
+    &:hover {
+      cursor: pointer;
+    }
+  }
 }

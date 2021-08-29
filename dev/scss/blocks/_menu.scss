@@ -21,6 +21,9 @@
     &__item:not(:last-child) {
       border-bottom: 1px solid var(--Light-gray);
     }
+    &__link {
+      width: 100%;
+    }
     &--hide {
       display: none;
     }

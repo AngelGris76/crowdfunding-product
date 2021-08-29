@@ -1,14 +1,16 @@
 mixin pledge-form(pledge)
   - var attDisabled = {}
-  - var extraClass ="" 
+  - var extraClass = ""
+  - var labelClass = ""
   if (pledge.unitLeft == "0")
     - attDisabled = {disabled:"disabled"}
     - extraClass = "pledge--disabled"
+    - labelClass = "pledge__label--disabled"
   div(class=`pledge ${extraClass}`)
     .pledge__fixed
       .pledge__controls
         input.pledge__radio(id=`radio-${pledge.radioName}` type="radio" name="pledge-radio")&attributes(attDisabled)
-        label.pledge__label(for= `radio-${pledge.radioName}`)= pledge.type
+        label(class=`pledge__label ${labelClass}` for= `radio-${pledge.radioName}`)= pledge.type
           if (pledge.pledgeAmount != "15")
             span.pledge__label--light= `Pledge $${pledge.pledgeAmount} or more`
       p.pledge__description= pledge.description

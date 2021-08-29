@@ -11,14 +11,14 @@
     <link rel="stylesheet" href="css/styles.css">
     <title>Crowdfunding Product</title>
   </head>
-  <body class="body-overflow--hide">
+  <body>
     <header class="header">
       <nav class="main-nav"><img class="logo" src="assets/images/logo.svg" alt="logo">
-        <button class="button-togle" type="button" aria-pressed="false" aria-label="menu button" aria-expanded="false"><img src="assets/images/icon-hamburger.svg" alt=""></button>
+        <button class="button-menu" type="button" aria-pressed="false" aria-label="menu button" aria-expanded="false"><img class="button-menu__image" src="assets/images/icon-hamburger.svg" alt=""></button>
         <ul class="menu menu--hide">
-              <li class="menu__item"><a class="menu__link" href="#">About</a></li>
-              <li class="menu__item"><a class="menu__link" href="#">Discover</a></li>
-              <li class="menu__item"><a class="menu__link" href="#">GetStarted</a></li>
+              <li class="menu__item"><a class="menu__link" href="index.html">About</a></li>
+              <li class="menu__item"><a class="menu__link" href="index.html">Discover</a></li>
+              <li class="menu__item"><a class="menu__link" href="index.html">GetStarted</a></li>
         </ul>
       </nav>
     </header>
@@ -28,7 +28,7 @@
         <p class="heading__subtitle">A beautiful & handcrafted monitor stand to reduce neck and eye strain.</p>
         <div class="heading__controls">
           <button class="heading__button button--primary" type="button">Back this project</button>
-          <button class="heading__button button--bookmark" type="button" aria-label="bookmark"><img class="heading__icon-bookmark" src="assets/images/icon-bookmark.svg" alt=""><span class="heading__button-text">Bookmark</span></button>
+          <button class="heading__button button--bookmark" type="button" aria-label="bookmark"><img class="heading__icon-bookmark" src="assets/images/icon-bookmark.svg" alt=""><span class="heading__button-text">Bookmark        </span></button>
         </div>
       </div>
       <div class="stats">
@@ -73,13 +73,13 @@
                 <p class="model__description model--disabled">You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank you. You’ll be added to our Backer member list. Shipping is included.</p>
                 <div class="model__footer model--disabled">
                   <p class="model__left model--disabled">0<span class="model__left-text">left</span></p>
-                  <button class="model__get button--primary model__get--disabled" type="button" disabled>Out of stock</button>
+                  <button class="model__get button--primary button--disabled" type="button" disabled>Out of stock</button>
                 </div>
               </section>
       </article>
     </main>
-    <div class="modal-overlay">
-      <div class="modal-pledge" role="dialog" aria-modal="true" aria-labelledby="modal-pledge__title">
+    <div class="modal-overlay modal--hide">
+      <div class="modal-pledge modal--hide" role="dialog" aria-modal="true" aria-labelledby="modal-pledge__title">
         <header class="modal-pledge__header">
           <h2 class="modal-pledge__title" id="modal-pledge__title">Back this project</h2>
           <button class="modal-pledge__closebutton" type="button" aria-label="close modal"><img class="modal-pledge__closebutton-img" src="assets/images/icon-close-modal.svg" alt=""></button>
@@ -90,7 +90,7 @@
                 <div class="pledge__fixed">
                   <div class="pledge__controls">
                     <input class="pledge__radio" id="radio-noreward" type="radio" name="pledge-radio">
-                    <label class="pledge__label" for="radio-noreward">Pledge with no reward
+                    <label class="pledge__label " for="radio-noreward">Pledge with no reward
                     </label>
                   </div>
                   <p class="pledge__description">Choose to support us without a reward if you simply believe in our project. As a backer, you will be signed up to receive product updates via email.</p>
@@ -107,7 +107,7 @@
                 <div class="pledge__fixed">
                   <div class="pledge__controls">
                     <input class="pledge__radio" id="radio-bamboo" type="radio" name="pledge-radio">
-                    <label class="pledge__label" for="radio-bamboo">Bamboo Stand<span class="pledge__label--light">Pledge $25 or more</span>
+                    <label class="pledge__label " for="radio-bamboo">Bamboo Stand<span class="pledge__label--light">Pledge $25 or more</span>
                     </label>
                   </div>
                   <p class="pledge__description">You get an ergonomic stand made of natural bamboo. You've helped us launch our promotional campaign, and you’ll be added to a special Backer member list.</p>
@@ -125,7 +125,7 @@
                 <div class="pledge__fixed">
                   <div class="pledge__controls">
                     <input class="pledge__radio" id="radio-balck-edition" type="radio" name="pledge-radio">
-                    <label class="pledge__label" for="radio-balck-edition">Black Edition Stand<span class="pledge__label--light">Pledge $75 or more</span>
+                    <label class="pledge__label " for="radio-balck-edition">Black Edition Stand<span class="pledge__label--light">Pledge $75 or more</span>
                     </label>
                   </div>
                   <p class="pledge__description">You get a Black Special Edition computer stand and a personal thank you. You’ll be added to our Backer member list. Shipping is included.</p>
@@ -143,7 +143,7 @@
                 <div class="pledge__fixed">
                   <div class="pledge__controls">
                     <input class="pledge__radio" id="radio-mahogany" type="radio" name="pledge-radio" disabled="disabled">
-                    <label class="pledge__label" for="radio-mahogany">Mahogany Special Edition<span class="pledge__label--light">Pledge $200 or more</span>
+                    <label class="pledge__label pledge__label--disabled" for="radio-mahogany">Mahogany Special Edition<span class="pledge__label--light">Pledge $200 or more</span>
                     </label>
                   </div>
                   <p class="pledge__description">You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank you. You’ll be added to our Backer member list. Shipping is included.</p>
@@ -162,7 +162,7 @@
       <div class="modal-success modal--hide" role="dialog" aria-modal="true"><img class="modal-success__image" src="assets/images/icon-check.svg" alt="success ok">
         <h2 class="modal-success__title">Thanks for your support!</h2>
         <p class="modal-success__paragraph">Your pledge brings us one step closer to sharing Mastercraft Bamboo Monitor Riser worldwide. You will get an email once our campaign is completed.</p>
-        <button class="modal-success__button button--primary modal-success__button" type="button">Got it!</button>
+        <button class="modal-success__button button--primary" type="button">Got it!</button>
       </div>
     </div>
     <script src="js/scripts.js"> </script>

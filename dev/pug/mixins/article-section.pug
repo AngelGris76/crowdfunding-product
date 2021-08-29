@@ -2,7 +2,7 @@ mixin article-section(option)
   if(option.left =="0")
     - var extraClass = "model--disabled"
   else
-    - var extraClass =""
+    - extraClass =""
   section.model(class=`${extraClass}`)
     .model__header(class=`${extraClass}`)
       h3.model__title(class=`${extraClass}`)= option.title
@@ -12,6 +12,6 @@ mixin article-section(option)
       p.model__left(class=`${extraClass}`)= option.left
         span.model__left-text left
       if(option.left == "0")
-        button.model__get.button--primary.model__get--disabled(type="button" disabled) Out of stock
+        button.model__get.button--primary.button--disabled(type="button" disabled) Out of stock
       else
         button.model__get.button--primary(type="button") Select Reward

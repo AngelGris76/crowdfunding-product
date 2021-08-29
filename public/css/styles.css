@@ -20,7 +20,7 @@ body {
   background-color: var(--Light-gray);
 }
 
-.button-togle,
+.button-menu,
 .heading__button,
 .model__get,
 .modal-pledge__closebutton,
@@ -29,6 +29,14 @@ body {
   border: none;
   outline: none;
   background-color: transparent;
+}
+
+@media screen and (min-width: 1024px) {
+  .button--primary:hover,
+.button--bookmark:hover,
+.modal-pledge__closebutton:hover {
+    cursor: pointer;
+  }
 }
 
 .header {
@@ -65,7 +73,7 @@ body {
 }
 
 @media screen and (min-width: 768px) {
-  .button-togle {
+  .button-menu {
     display: none;
   }
 }
@@ -94,6 +102,9 @@ body {
   }
   .menu__item:not(:last-child) {
     border-bottom: 1px solid var(--Light-gray);
+  }
+  .menu__link {
+    width: 100%;
   }
   .menu--hide {
     display: none;
@@ -157,10 +168,17 @@ body {
   max-width: 218px;
   border-radius: 1.7em;
 }
+@media screen and (min-width: 1024px) {
+  .button--primary:hover {
+    background-color: var(--Dark-cyan);
+  }
+}
 
 .button--bookmark {
   border-radius: 28px;
   background-color: var(--Light-gray);
+  font-weight: 500;
+  position: relative;
 }
 @media screen and (max-width: 767px) {
   .button--bookmark {
@@ -168,6 +186,29 @@ body {
     width: 56px;
     height: 56px;
   }
+}
+.button--bookmark-pressed {
+  color: var(--Dark-cyan);
+}
+.button--bookmark-pressed::after {
+  display: block;
+  position: absolute;
+  content: "";
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  top: 0;
+  left: 0;
+  background-color: var(--Moderate-cyan);
+  opacity: 0.7;
+}
+
+.button--disabled {
+  background-color: var(--Dark-gray);
+}
+.button--disabled:hover {
+  cursor: default;
+  background-color: var(--Dark-gray);
 }
 
 .heading {
@@ -423,9 +464,6 @@ body {
   border-radius: 1.6em;
   max-width: 160px;
 }
-.model__get--disabled {
-  background-color: var(--Dark-gray);
-}
 .model--disabled {
   opacity: 0.7;
 }
@@ -478,6 +516,14 @@ body {
   }
   .modal-pledge__description {
     margin-bottom: 2.6em;
+  }
+}
+.modal-pledge__closebutton {
+  filter: opacity(0.6);
+}
+@media screen and (min-width: 1024px) {
+  .modal-pledge__closebutton:hover {
+    filter: none;
   }
 }
 
@@ -536,6 +582,12 @@ body {
   top: 5px;
   left: 5px;
 }
+@media screen and (min-width: 1024px) {
+  .pledge__radio:hover:not([disabled]) {
+    border-color: var(--Moderate-cyan);
+    cursor: pointer;
+  }
+}
 .pledge__label {
   color: black;
   font-weight: 700;
@@ -555,6 +607,16 @@ body {
 @media screen and (min-width: 768px) {
   .pledge__label {
     font-size: 1rem;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .pledge__label:hover {
+    color: var(--Moderate-cyan);
+    cursor: pointer;
+  }
+  .pledge__label--disabled:hover {
+    color: initial;
+    cursor: default;
   }
 }
 .pledge__description {
@@ -620,6 +682,15 @@ body {
   outline: none;
   padding-left: 3em;
   font-weight: 700;
+}
+.pledge__expandable-input:focus {
+  border-color: var(--Moderate-cyan);
+}
+@media screen and (min-width: 1024px) {
+  .pledge__expandable-input:hover {
+    border-color: var(--Moderate-cyan);
+    cursor: pointer;
+  }
 }
 @media screen and (min-width: 768px) {
   .pledge__expandable {
@@ -703,4 +774,9 @@ body {
 
 .body-overflow--hide {
   overflow: hidden;
+}
+@media screen and (min-width: 1024px) {
+  .body-overflow--hide {
+    padding-right: 15px;
+  }
 }

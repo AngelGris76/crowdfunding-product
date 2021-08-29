@@ -2,8 +2,8 @@ include ../mixins/menu-item
 header.header
   nav.main-nav
     img.logo(src="assets/images/logo.svg", alt="logo")
-    button.button-togle(type="button" aria-pressed="false" aria-label="menu button" aria-expanded="false")
-      img(src="assets/images/icon-hamburger.svg", alt="")
+    button.button-menu(type="button" aria-pressed="false" aria-label="menu button" aria-expanded="false")
+      img.button-menu__image(src="assets/images/icon-hamburger.svg", alt="")
     ul.menu.menu--hide
       +menu-item("About")
       +menu-item("Discover")

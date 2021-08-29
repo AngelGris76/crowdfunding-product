@@ -45,6 +45,14 @@
       margin-bottom: 2.6em;
     }
   }
+  &__closebutton {
+    filter: opacity(0.6);
+    @media screen and (min-width: 1024px) {
+      &:hover {
+        filter: none;
+      }
+    }
+  }
 }
 
 .modal-pledge__description,
@@ -96,6 +104,12 @@
       top: 5px;
       left: 5px;
     }
+    @media screen and (min-width: 1024px) {
+      &:hover:not([disabled]) {
+        border-color: var(--Moderate-cyan);
+        cursor: pointer;
+      }
+    }
   }
   &__label {
     color: black;
@@ -112,6 +126,16 @@
     }
     @media screen and (min-width: 768px) {
       font-size: 1rem;
+    }
+    @media screen and (min-width: 1024px) {
+      &:hover {
+        color: var(--Moderate-cyan);
+        cursor: pointer;
+      }
+      &--disabled:hover {
+        color: initial;
+        cursor: default;
+      }
     }
   }
 
@@ -177,6 +201,15 @@
       outline: none;
       padding-left: 3em;
       font-weight: 700;
+      &:focus {
+        border-color: var(--Moderate-cyan);
+      }
+      @media screen and (min-width: 1024px) {
+        &:hover {
+          border-color: var(--Moderate-cyan);
+          cursor: pointer;
+        }
+      }
     }
     @media screen and (min-width: 768px) {
       flex-direction: row;
