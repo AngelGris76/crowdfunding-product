@@ -350,6 +350,7 @@ body {
   height: 12px;
   border-radius: 6px;
   width: var(--Bar-percentaje);
+  max-width: 100%;
   background-color: var(--Moderate-cyan);
   left: 0;
 }
@@ -465,7 +466,7 @@ body {
   max-width: 160px;
 }
 .model--disabled {
-  opacity: 0.7;
+  opacity: 0.5;
 }
 
 .modal-pledge,

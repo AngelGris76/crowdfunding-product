@@ -4,9 +4,9 @@ mixin pledge-form(pledge)
   - var labelClass = ""
   if (pledge.unitLeft == "0")
     - attDisabled = {disabled:"disabled"}
-    - extraClass = "pledge--disabled"
+    - extraClass = " pledge--disabled"
     - labelClass = "pledge__label--disabled"
-  div(class=`pledge ${extraClass}`)
+  div(class=`pledge${extraClass}` id=`pledge-${pledge.radioName}`)
     .pledge__fixed
       .pledge__controls
         input.pledge__radio(id=`radio-${pledge.radioName}` type="radio" name="pledge-radio")&attributes(attDisabled)

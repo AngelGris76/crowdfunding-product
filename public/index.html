@@ -43,7 +43,7 @@
         <h2 class="article__title">About this project</h2>
         <p class="article__description">The Mastercraft Bamboo Monitor Riser is a sturdy and stylish platform that elevates your screen to a more comfortable viewing height. Placing your monitor at eye level has the potential to improve your posture and make you more comfortable while at work, helping you stay focused on the task at hand.</p>
         <p class="article__description">Featuring artisan craftsmanship, the simplicity of design creates extra desk space below your computer to allow notepads, pens, and USB sticks to be stored under the stand.</p>
-              <section class="model">
+              <section class="model" id="model-bamboo">
                 <div class="model__header">
                   <h3 class="model__title">Bamboo Stand</h3>
                   <p class="model__price">Pledge $25 or more</p>
@@ -54,7 +54,7 @@
                   <button class="model__get button--primary" type="button">Select Reward</button>
                 </div>
               </section>
-              <section class="model">
+              <section class="model" id="model-black-edition">
                 <div class="model__header">
                   <h3 class="model__title">Black Edition Stand</h3>
                   <p class="model__price">Pledge $75 or more</p>
@@ -65,14 +65,14 @@
                   <button class="model__get button--primary" type="button">Select Reward</button>
                 </div>
               </section>
-              <section class="model model--disabled">
-                <div class="model__header model--disabled">
-                  <h3 class="model__title model--disabled">Mahogany Special Edition</h3>
-                  <p class="model__price model--disabled">Pledge $200 or more</p>
+              <section class="model model--disabled" id="model-mahogany-edition">
+                <div class="model__header">
+                  <h3 class="model__title">Mahogany Special Edition</h3>
+                  <p class="model__price">Pledge $200 or more</p>
                 </div>
-                <p class="model__description model--disabled">You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank you. You’ll be added to our Backer member list. Shipping is included.</p>
-                <div class="model__footer model--disabled">
-                  <p class="model__left model--disabled">0<span class="model__left-text">left</span></p>
+                <p class="model__description">You get two Special Edition Mahogany stands, a Backer T-Shirt, and a personal thank you. You’ll be added to our Backer member list. Shipping is included.</p>
+                <div class="model__footer">
+                  <p class="model__left">0<span class="model__left-text">left</span></p>
                   <button class="model__get button--primary button--disabled" type="button" disabled>Out of stock</button>
                 </div>
               </section>
@@ -86,7 +86,7 @@
         </header>
         <p class="modal-pledge__description">Want to support us in bringingMastercraft Bamboo Monitor Riser out in the world?</p>
         <form class="pledge-form" action="post" name="reward">
-              <div class="pledge ">
+              <div class="pledge" id="pledge-noreward">
                 <div class="pledge__fixed">
                   <div class="pledge__controls">
                     <input class="pledge__radio" id="radio-noreward" type="radio" name="pledge-radio">
@@ -103,7 +103,7 @@
                   </div>
                 </div>
               </div>
-              <div class="pledge ">
+              <div class="pledge" id="pledge-bamboo">
                 <div class="pledge__fixed">
                   <div class="pledge__controls">
                     <input class="pledge__radio" id="radio-bamboo" type="radio" name="pledge-radio">
@@ -121,7 +121,7 @@
                   </div>
                 </div>
               </div>
-              <div class="pledge ">
+              <div class="pledge" id="pledge-black-edition">
                 <div class="pledge__fixed">
                   <div class="pledge__controls">
                     <input class="pledge__radio" id="radio-black-edition" type="radio" name="pledge-radio">
@@ -139,7 +139,7 @@
                   </div>
                 </div>
               </div>
-              <div class="pledge pledge--disabled">
+              <div class="pledge pledge--disabled" id="pledge-mahogany">
                 <div class="pledge__fixed">
                   <div class="pledge__controls">
                     <input class="pledge__radio" id="radio-mahogany" type="radio" name="pledge-radio" disabled="disabled">

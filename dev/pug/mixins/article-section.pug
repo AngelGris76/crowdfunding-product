@@ -3,13 +3,13 @@ mixin article-section(option)
     - var extraClass = "model--disabled"
   else
     - extraClass =""
-  section.model(class=`${extraClass}`)
-    .model__header(class=`${extraClass}`)
-      h3.model__title(class=`${extraClass}`)= option.title
-      p.model__price(class=`${extraClass}`)= `Pledge $${option.price} or more`
-    p.model__description(class=`${extraClass}`)= option.description
-    .model__footer(class=`${extraClass}`)
-      p.model__left(class=`${extraClass}`)= option.left
+  section.model(class=`${extraClass}` id=`model-${option.id}`)
+    .model__header
+      h3.model__title= option.title
+      p.model__price= `Pledge $${option.price} or more`
+    p.model__description= option.description
+    .model__footer
+      p.model__left= option.left
         span.model__left-text left
       if(option.left == "0")
         button.model__get.button--primary.button--disabled(type="button" disabled) Out of stock

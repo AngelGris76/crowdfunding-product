@@ -204,6 +204,7 @@
       height: 12px;
       border-radius: 6px;
       width: var(--Bar-percentaje);
+      max-width: 100%;
       background-color: var(--Moderate-cyan);
       left: 0;
     }
@@ -325,6 +326,6 @@
   }
 
   &--disabled {
-    opacity: 0.7;
+    opacity: 0.5;
   }
 }
