@@ -688,6 +688,14 @@ body {
   border-color: var(--Moderate-cyan);
 }
 @media screen and (min-width: 1024px) {
+  .pledge__expandable-input {
+    -webkit-appearance: textfield;
+            appearance: textfield;
+  }
+  .pledge__expandable-input::-webkit-inner-spin-button, .pledge__expandable-input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
   .pledge__expandable-input:hover {
     border-color: var(--Moderate-cyan);
     cursor: pointer;

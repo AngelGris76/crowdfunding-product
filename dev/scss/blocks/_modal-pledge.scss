@@ -205,6 +205,12 @@
         border-color: var(--Moderate-cyan);
       }
       @media screen and (min-width: 1024px) {
+        &::-webkit-inner-spin-button,
+        &::-webkit-outer-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+        appearance: textfield;
         &:hover {
           border-color: var(--Moderate-cyan);
           cursor: pointer;
