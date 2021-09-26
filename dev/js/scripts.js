@@ -86,17 +86,35 @@ const showModalPledge = () => {
 };
 
 const unselectPledge = (pledgeToDeselect) => {
+  const pledgeExpandable = pledgeToDeselect.querySelector(
+    ".pledge__expandable"
+  );
+  const pledgeExpandableInput = pledgeExpandable.querySelector(
+    ".pledge__expandable-input"
+  );
+  const pledgeExpandableButton = pledgeExpandable.querySelector(
+    ".pledge__expandable-button"
+  );
+
   pledgeToDeselect.classList.remove("pledge--selected");
-  pledgeToDeselect.children[1].classList.add("pledge__expandable--hide");
-  pledgeToDeselect.children[1].children[1].children[0].disabled = true;
-  pledgeToDeselect.children[1].children[1].children[1].disabled = true;
+  pledgeExpandable.classList.add("pledge__expandable--hide");
+  pledgeExpandableInput.disabled = true;
+  pledgeExpandableButton.disabled = true;
 };
 
 const selectPledge = (pledgeToSelect) => {
+  const pledgeExpandable = pledgeToSelect.querySelector(".pledge__expandable");
+  const pledgeExpandableInput = pledgeExpandable.querySelector(
+    ".pledge__expandable-input"
+  );
+  const pledgeExpandableButton = pledgeExpandable.querySelector(
+    ".pledge__expandable-button"
+  );
+
   pledgeToSelect.classList.add("pledge--selected");
-  pledgeToSelect.children[1].classList.remove("pledge__expandable--hide");
-  pledgeToSelect.children[1].children[1].children[0].disabled = false;
-  pledgeToSelect.children[1].children[1].children[1].disabled = false;
+  pledgeExpandable.classList.remove("pledge__expandable--hide");
+  pledgeExpandableInput.disabled = false;
+  pledgeExpandableButton.disabled = false;
 };
 
 const cancelModalPledge = () => {
